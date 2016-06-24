@@ -3,6 +3,18 @@ body {
   margin: 0;
   padding: 0;
 }
+
+#slick-testem.failing {
+  background: red;
+  color: white;
+  background: #EE5757;
+  padding: 2px 4px;
+}
+
+#qunit-banner.qunit-pass {
+  background-color: #3c763d;
+}
+
 #qunit-testrunner-toolbar {
     color: #000;
 }
