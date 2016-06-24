@@ -4,16 +4,18 @@ Heyo!
 
 ## Development
 
-// TODO: Add local dev instructions
-* Install from github
+`ember generate slick_testem` will load/reload the current `.js` and
+`.cs` files we are using to customize testem.
+
+All customization will happen;
 
 ```
-ember install https://github.com/<repo-username>/<repo-name>.git
+/blueprints/slick_testem/files/tests/slick-testem.css
+/blueprints/slick_testem/files/tests/slick-testem.js
 ```
 
-* Run `npm-link` in the project directory
-
-* Run `npm-link slick_testem` in your dev burner project
+After running the generator, you will be able to see your customizations inside
+of testem: http://localhost:4649/tests
 
 ## Installation
 
