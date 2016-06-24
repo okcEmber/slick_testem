@@ -1,6 +1,8 @@
 # Slick-testem
 
-Heyo!
+Quickstart: `ember install slick_testem`.
+
+TODO: Add screenshot
 
 ## Development
 
