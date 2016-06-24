@@ -5,6 +5,15 @@ Heyo!
 ## Development
 
 // TODO: Add local dev instructions
+* Install from github
+
+```
+ember install https://github.com/<repo-username>/<repo-name>.git
+```
+
+* Run `npm-link` in the project directory
+
+* Run `npm-link slick_testem` in your dev burner project
 
 ## Installation
 
