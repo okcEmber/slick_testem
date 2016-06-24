@@ -1,6 +1,10 @@
 # Slick-testem
 
-This README outlines the details of collaborating on this Ember addon.
+Heyo!
+
+## Development
+
+// TODO: Add local dev instructions
 
 ## Installation
 
