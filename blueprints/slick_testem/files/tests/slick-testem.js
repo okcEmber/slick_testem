@@ -2,7 +2,7 @@
   "use strict";
   var SlickTestem = function() {
     var $slickTestem = $(`
-      <div style="float:right;" id="slick-testem">
+      <div id="slick-testem">
         <span class="tests-ran">0</span> / <span class="tests-total">0</span><br>
       </div>
     `);
@@ -11,6 +11,7 @@
       hasNotifiedFailing: false,
 
       setupHeader: function() {
+        console.log("Setting up slick testem");
         $('#qunit-header').append($slickTestem);
         $('.tests-total').text($('[id^="qunit-test-output"]').length);
       },
@@ -27,7 +28,7 @@
       },
 
       checkFailing: function () {
-        if(this.isFailing() && !this.hasNotifiedFailing) {
+        if(this.isFailing()) {
           $('#slick-testem').addClass('failing');
           this.hasNotifiedFailing = true;
         }
@@ -41,7 +42,7 @@
 
         this.setupTimer = window.setTimeout(() => {
           this.setupHeader();
-        }, 1000); // lazy timer
+        }, 3000); // lazy timer
       }
     };
   };

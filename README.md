@@ -12,6 +12,8 @@ Quickstart: `ember install slick_testem`.
 
 ## Development
 
+This runs on `http://localhost:4649`.
+
 `ember generate slick_testem` will load/reload the current `.js` and
 `.cs` files we are using to customize testem.
 
@@ -34,7 +36,7 @@ of testem: http://localhost:4649/tests
 ## Running
 
 * `ember server`
-* Visit your app at http://localhost:4200.
+* Visit your app at http://localhost:4649.
 
 ## Running Tests
 
