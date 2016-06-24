@@ -2,7 +2,7 @@
 
 Quickstart: `ember install slick_testem`.
 
-TODO: Add screenshot
+![screenshot.jpg](screenshot.jpg)
 
 ## Development
 
