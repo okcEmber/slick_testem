@@ -16,4 +16,6 @@
 npm-debug.log
 testem.log
 *.swp
+tests/slick-testem.css
+tests/slick-testem.js
 

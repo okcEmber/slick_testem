@@ -2,13 +2,13 @@
 
 Some minor adjustments to make Test'em slick!
 
+![screenshot.jpg](screenshot.jpg)
+
 * Fast Failing Notification
 * Lighter Interface
 * More coming soon!
 
 Quickstart: `ember install slick_testem`.
-
-![screenshot.jpg](screenshot.jpg)
 
 ## Development
 
