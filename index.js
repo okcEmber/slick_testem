@@ -19,8 +19,6 @@ module.exports = {
         destDir: '/assets'
       });
 
-      console.log(slickFiles);
-
       return mergeTrees([tree, slickFiles], {
         overwrite: true
       });

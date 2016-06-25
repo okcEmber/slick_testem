@@ -11,7 +11,6 @@
       hasNotifiedFailing: false,
 
       setupHeader: function() {
-        console.log("Setting up slick testem");
         $('#qunit-header').append($slickTestem);
         $('.tests-total').text($('[id^="qunit-test-output"]').length);
       },
