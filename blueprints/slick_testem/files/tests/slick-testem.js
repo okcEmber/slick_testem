@@ -1,7 +1,7 @@
 (function(window, document, $) {
-  "use strict";
-  var SlickTestem = function() {
-    var $slickTestem = $(`
+  'use strict';
+  let SlickTestem = function() {
+    let $slickTestem = $(`
       <div id="slick-testem">
         <span class="tests-ran">0</span> / <span class="tests-total">0</span><br>
       </div>
@@ -10,30 +10,30 @@
     return {
       hasNotifiedFailing: false,
 
-      setupHeader: function() {
+      setupHeader() {
         $('#qunit-header').append($slickTestem);
         $('.tests-total').text($('[id^="qunit-test-output"]').length);
       },
 
-      isFailing: function() {
+      isFailing() {
         return $('.fail').length > 0;
       },
 
-      updateProgress: function() {
-        var selectors = ['[id^="qunit-test-output"].pass',
+      updateProgress() {
+        let selectors = ['[id^="qunit-test-output"].pass',
           '[id^="qunit-test-output"].fail',
           '[id^="qunit-test-output"].skip'];
         $('.tests-ran').text($(selectors.join(', ')).length);
       },
 
-      checkFailing: function () {
-        if(this.isFailing()) {
+      checkFailing() {
+        if (this.isFailing()) {
           $('#slick-testem').addClass('failing');
           this.hasNotifiedFailing = true;
         }
       },
 
-      go: function() {
+      go() {
         this.monitorTimer = window.setInterval(() => {
           this.checkFailing();
           this.updateProgress();
@@ -46,7 +46,6 @@
     };
   };
 
-  var a
-  var slickTestem = new SlickTestem();
+  let slickTestem = new SlickTestem();
   slickTestem.go();
 })(window, document, $);

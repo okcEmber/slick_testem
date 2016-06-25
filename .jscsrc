@@ -1,0 +1,8 @@
+{
+  "preset": "ember-suave",
+  "excludeFiles": [
+    "app.js",
+    "helpers/*",
+    "router.js"
+  ]
+}
