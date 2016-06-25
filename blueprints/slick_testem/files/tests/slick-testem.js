@@ -25,12 +25,14 @@
           $h.append($slickTestem);
           this.totalTests = $('[id^="qunit-test-output"]').length;
           $('.tests-total').text(this.totalTests);
+          $('$qunit-banner').addClass('qunit-pass');
           this.startMonitor();
           window.clearInterval(this.setupTimer);
         }
       },
 
       isFailing() {
+        $('$qunit-banner').addClass('qunit-fail');
         return $('.fail').length > 0;
       },
 
