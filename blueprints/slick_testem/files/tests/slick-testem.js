@@ -9,10 +9,25 @@
 
     return {
       hasNotifiedFailing: false,
+      totalTests: 0,
+      testsRun: 0,
+      monitorTimer: null,
+      setupTimer: null,
+
+      percentComplete() {
+        return (this.testsRun / this.totalTests) * 100 || 0;
+      },
 
       setupHeader() {
-        $('#qunit-header').append($slickTestem);
-        $('.tests-total').text($('[id^="qunit-test-output"]').length);
+        let $h = $('#qunit-header');
+
+        if ($h.length) {
+          $h.append($slickTestem);
+          this.totalTests = $('[id^="qunit-test-output"]').length;
+          $('.tests-total').text(this.totalTests);
+          this.startMonitor();
+          window.clearInterval(this.setupTimer);
+        }
       },
 
       isFailing() {
@@ -23,7 +38,10 @@
         let selectors = ['[id^="qunit-test-output"].pass',
           '[id^="qunit-test-output"].fail',
           '[id^="qunit-test-output"].skip'];
-        $('.tests-ran').text($(selectors.join(', ')).length);
+        this.testsRun = $(selectors.join(', ')).length;
+
+        $('#qunit-banner').width(`${this.percentComplete()}%`);
+        $('.tests-ran').text(this.testsRun);
       },
 
       checkFailing() {
@@ -33,15 +51,24 @@
         }
       },
 
-      go() {
+      clearMonitor() {
+        if (this.percentComplete() >= 100) {
+          window.clearInterval(this.monitorTimer);
+        }
+      },
+
+      startMonitor() {
         this.monitorTimer = window.setInterval(() => {
           this.checkFailing();
           this.updateProgress();
+          this.clearMonitor();
         }, 300);
+      },
 
-        this.setupTimer = window.setTimeout(() => {
+      go() {
+        this.setupTimer = window.setInterval(() => {
           this.setupHeader();
-        }, 3000); // lazy timer
+        }, 300);
       }
     };
   };
