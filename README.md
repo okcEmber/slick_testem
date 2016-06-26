@@ -1,3 +1,7 @@
+[![NPM
+Version](https://badge.fury.io/js/slick_testem.svg)](http://badge.fury.io/js/slick_testem)
+[![Ember Observer
+Score](http://emberobserver.com/badges/slick_testem.svg)](http://emberobserver.com/addons/slick_testem)
 # Slick-testem
 
 Some minor adjustments to make Test'em slick!
