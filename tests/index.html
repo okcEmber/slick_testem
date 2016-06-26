@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/dummy.css">
     <link rel="stylesheet" href="assets/test-support.css">
     <link rel="stylesheet" href="assets/slick-testem.css"></script>
+    <script src="assets/slick-testem.js"></script>
 
     {{content-for "head-footer"}}
     {{content-for "test-head-footer"}}
@@ -28,9 +29,9 @@
     <script src="assets/dummy.js"></script>
     <script src="assets/tests.js"></script>
     <script src="assets/test-loader.js"></script>
-    <script src="assets/slick-testem.js"></script>
 
     {{content-for "body-footer"}}
     {{content-for "test-body-footer"}}
+<script> (function(window, document, $) { slickTestem = new SlickTestem(QUnit.config); slickTestem.go(); })(window, document, $); </script>
   </body>
 </html>
